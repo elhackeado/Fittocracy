@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/gp1"
+        android:checkableBehavior="single">
+    <item android:id="@+id/item1"
+        android:title="CARDIO"
+        android:icon="@drawable/ic_send_black_24dp"/>
+    <item android:id="@+id/item2"
+        android:title="STRENGTH"
+        android:icon="@drawable/ic_send_black_24dp"/>
+    <item android:id="@+id/item3"
+        android:title="STRETCHING"
+        android:icon="@drawable/ic_send_black_24dp"/>
+    <item android:id="@+id/item4"
+        android:title="YOGA"
+        android:icon="@drawable/ic_send_black_24dp"/>
+    </group>
+    <group
+        android:id="@+id/gp2"
+        android:checkableBehavior="single">
+    <item android:id="@+id/item5"
+        android:title="ABOUT US"
+        android:icon="@drawable/ic_info_outline_black_24dp"/>
+    </group>
+
+</menu>
