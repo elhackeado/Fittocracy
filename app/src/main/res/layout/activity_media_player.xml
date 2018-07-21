@@ -7,17 +7,145 @@
     tools:context=".MediaPlayer">
 
 
+
+
     <VideoView
         android:id="@+id/videoView"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:keepScreenOn="true"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:soundEffectsEnabled="true"
-        />
+        android:layout_centerVertical="true"
+        android:keepScreenOn="true"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:soundEffectsEnabled="true" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:text="SET TIMER"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/timerInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="207dp"
+        android:ems="2"
+        android:textSize="30sp"
+        android:inputType="number"
+        android:text="30"
+        android:maxLength="3"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="176dp"
+        android:text="Seconds"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
+        android:text="For" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="207dp"
+        android:text="Exercise"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="60dp"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="95dp"
+        android:layout_toStartOf="@+id/textView7"
+        android:background="@drawable/round_button"
+        android:text="+"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/subtract"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:layout_alignTop="@+id/add"
+        android:layout_toEndOf="@+id/textView7"
+        android:background="@drawable/round_button"
+        android:text="-"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:background="@color/colorPrimary"
+        android:text="Start"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:text="000"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="103dp"
+        android:layout_height="83dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        app:srcCompat="@drawable/ic_timer_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="60dp"
+        android:layout_height="59dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/round_button"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_replay_black_24dp" />
 
 </RelativeLayout>
