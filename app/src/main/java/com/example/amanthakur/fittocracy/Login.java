@@ -1,6 +1,8 @@
 package com.example.amanthakur.fittocracy;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,11 +44,18 @@ public class Login extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 String phone = editText.getText().toString().trim();
                 final String password = editText2.getText().toString().trim();
                 if(phone.equals("")||password.equals("")){
-                    Toast.makeText(Login.this,"FILL USERNAME & PASSWORD",Toast.LENGTH_LONG).show();
+                    //Toast.makeText(Login.this,"FILL USERNAME & PASSWORD",Toast.LENGTH_LONG).show();
+                    Snackbar snackbar = Snackbar.make(view,"FILL USERNAME & PASSWORD",Snackbar.LENGTH_LONG);
+                    View sbView = snackbar.getView();
+                    sbView.setBackgroundColor(Color.BLACK);
+                    TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(Color.WHITE);
+                    snackbar.show();
+
                 }
                 else{
                     mDatabase = FirebaseDatabase.getInstance().getReference("users/"+phone+"/pass");
@@ -56,13 +65,18 @@ public class Login extends AppCompatActivity {
                          String pass =    dataSnapshot.getValue().toString().trim();
                             if(password.equals(pass)){
                                 Intent intent = new Intent(Login.this,MainActivity.class);
-                                Toast.makeText(Login.this,"AUTHENTICATED !",Toast.LENGTH_LONG).show();
                                 startActivity(intent);
                                 finish();
                             }
                             else
                             {
-                                Toast.makeText(Login.this,"INVALID USERNAME/PASSWORD",Toast.LENGTH_LONG).show();
+                                //Toast.makeText(Login.this,"INVALID USERNAME/PASSWORD",Toast.LENGTH_LONG).show();
+                                Snackbar snackbar = Snackbar.make(view,"Invalid Username OR Password",Snackbar.LENGTH_LONG);
+                                View sbView = snackbar.getView();
+                                sbView.setBackgroundColor(Color.BLACK);
+                                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                                textView.setTextColor(Color.WHITE);
+                                snackbar.show();
                             }
 
                         }

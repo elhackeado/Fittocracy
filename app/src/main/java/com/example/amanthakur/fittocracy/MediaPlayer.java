@@ -1,7 +1,9 @@
 package com.example.amanthakur.fittocracy;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.CountDownTimer;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -74,7 +76,15 @@ ImageView imgView;
                      timerInputET.setText(""+(input+10));
                  }
                  else {
-                     Toast.makeText(MediaPlayer.this,"MAX TIME LIMIT EXCEEDED",Toast.LENGTH_LONG).show();
+                     //Toast.makeText(MediaPlayer.this,"MAX TIME LIMIT EXCEEDED",Toast.LENGTH_LONG).show();
+                     Snackbar snackbar = Snackbar.make(view,"UPPER TIME LIMIT IS 600 SECONDS.",Snackbar.LENGTH_LONG);
+                     View sbView = snackbar.getView();
+                     sbView.setBackgroundColor(Color.BLACK);
+                     sbView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                     TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                     textView.setTextColor(Color.WHITE);
+                     snackbar.show();
+                     timerInputET.setText(""+600);
                  }
              }
          });
@@ -88,7 +98,15 @@ ImageView imgView;
                      timerInputET.setText("" + (input-10));
                  }
                  else {
-                     Toast.makeText(MediaPlayer.this,"LEAST LIMIT : 20 SECONDS ",Toast.LENGTH_LONG).show();
+                     //Toast.makeText(MediaPlayer.this,"LEAST LIMIT : 20 SECONDS ",Toast.LENGTH_LONG).show();
+                     Snackbar snackbar = Snackbar.make(view,"LOWER TIME LIMIT IS 10 SECONDS.",Snackbar.LENGTH_LONG);
+                     View sbView = snackbar.getView();
+                     sbView.setBackgroundColor(Color.BLACK);
+                     sbView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                     TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                     textView.setTextColor(Color.WHITE);
+                     snackbar.show();
+                     timerInputET.setText(""+20);
                  }
              }
          });
@@ -140,7 +158,14 @@ ImageView imgView;
                         });
                     }
                     else{
-                        Toast.makeText(MediaPlayer.this,"Input 20-600 Seconds",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MediaPlayer.this,"Input 20-600 Seconds",Toast.LENGTH_LONG).show();
+                        Snackbar snackbar = Snackbar.make(view,"TIME LIMIT : 20-600 SECONDS.",Snackbar.LENGTH_LONG);
+                        View sbView = snackbar.getView();
+                        sbView.setBackgroundColor(Color.BLACK);
+                        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
+                        textView.setTextColor(Color.WHITE);
+                        snackbar.show();
+                        timerInputET.setText(""+20);
                     }
              }
          });
